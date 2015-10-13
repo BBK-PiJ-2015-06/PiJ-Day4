@@ -1,31 +1,27 @@
+void readNumType(String s){
+	if (s.length() > 2 && s.substring(0,2) == "0x") {
+		println "This is a hexadecimal number."
+		println "Its decimal equivalent is: " + hexToDec(s);
+	} else {
+		int i = Integer.parseInt(s);
+		println "This is a decimal number."
+		println "Its hexadecimal equivalent is: " + decToHex(i);
+	}
+}
+
 int hexToDec(String s){
+	int output = 0;
+	for(int count = 0; count < s.length; count++) {
+		char c = s.charAt(count);
+		output
+	
+	}
 }
 
 String decToHex(int i){
 }
 
 
-println "Please choose an option from the menu below: ";
-println " ";
-println "1 - Convert an hexidecimal number into a decimal number.";
-println "2 - Convert a decimal number into an hexidecimal number.";
+println "Please insert an integer in either decimal or hexadecimal format: ";
 String s = System.console().readLine();
-int i = Integer.parseInt(s);
-switch (i) {
-case 1:
-	print "Enter hexadecimal number to be converted: ";
-	String str = System.conosle().readLine();
-	int result = hexToDec(str);
-	println result;
-	break;
-case 2:
-	print "Enter decimal number to be converted: ";
-	String str = System.console().readLine();
-	int i = Integer.parseInt(str);
-	String result = decToHex(i);
-	println result;
-	break;
-default:
-	println "This is not a valid input.";
-	break;
-}
+readNumType(s);
