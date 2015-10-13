@@ -1,3 +1,10 @@
+int hexToDec(String s){
+}
+
+String decToHex(int i){
+}
+
+
 println "Please choose an option from the menu below: ";
 println " ";
 println "1 - Convert an hexidecimal number into a decimal number.";
@@ -15,7 +22,7 @@ case 2:
 	print "Enter decimal number to be converted: ";
 	String str = System.console().readLine();
 	int i = Integer.parseInt(str);
-	int result = decToHex(i);
+	String result = decToHex(i);
 	println result;
 	break;
 default:
