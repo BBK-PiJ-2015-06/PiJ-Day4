@@ -11,12 +11,24 @@ class Mortgage {
 	}
 	
 	double getTotal() {
+		double output = this.borrowed * (1 + (this.interest/100));
+		return output;
 	}
 	
 	double getYearlyPay() {
+		double output = getTotal() / this.years;
+		return output;
 	}
 	
-	double getYearsToPayInterest() {
+	int getYearsToPayInterest() {
+		double totalInterest = (this.interest / 100) * this.borrowed;
+		int count = 0
+		while (totalInterest > 0) {
+			totalInterest = totalInterest - getYearlyPay();
+			count++;
+			}
+		return count;
+		
 	}
 }
 
@@ -36,3 +48,7 @@ s = System.console().readLine();
 double d2 = Double.parseDouble(s);
 
 Mortgage myMortgage = new Mortgage(d1, num1, d2);
+
+println "Total amount to be paid:                     " + myMortgage.getTotal();
+println "Money to be paid every year:                 " + myMortgage.getYearlyPay();
+println "The number of years before interest is paid: " + myMortgage.getYearsToPayInterest();
